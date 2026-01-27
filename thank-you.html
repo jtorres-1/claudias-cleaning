@@ -3,91 +3,202 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You - Claudia's Cleaning</title>
+  <title>¡Gracias! - Claudia's Cleaning</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     .thank-you-container {
-      min-height: 80vh;
+      min-height: 75vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 2rem;
+      padding: 60px 30px;
+      background: linear-gradient(135deg, rgba(255, 182, 217, 0.15) 0%, rgba(127, 255, 212, 0.15) 100%);
+      position: relative;
     }
-    .thank-you-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #2c3e50;
+    
+    .thank-you-container::before {
+      content: '✨';
+      position: absolute;
+      font-size: 150px;
+      opacity: 0.06;
+      top: 50px;
+      right: 100px;
+      animation: float 4s ease-in-out infinite;
     }
-    .thank-you-container p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #555;
-      max-width: 600px;
+
+    .thank-you-container::after {
+      content: '💖';
+      position: absolute;
+      font-size: 120px;
+      opacity: 0.06;
+      bottom: 80px;
+      left: 100px;
+      animation: float 5s ease-in-out infinite;
+      animation-delay: 1s;
     }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
     .checkmark {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      background-color: #4CAF50;
+      background: linear-gradient(135deg, #7FFFD4, #40E0D0);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 2rem;
-      animation: scaleIn 0.5s ease-in-out;
+      margin: 0 auto 30px;
+      animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 0 10px 30px rgba(64, 224, 208, 0.4);
     }
+    
     .checkmark::after {
       content: "✓";
-      font-size: 3rem;
+      font-size: 60px;
       color: white;
-      font-weight: bold;
+      font-weight: 900;
     }
-    @keyframes scaleIn {
+    
+    @keyframes popIn {
       0% {
-        transform: scale(0);
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
       }
       100% {
-        transform: scale(1);
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
       }
     }
+    
+    .thank-you-container h1 {
+      font-size: 64px;
+      margin-bottom: 25px;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(135deg, #40E0D0 0%, #FF69B4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 400;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .thank-you-container p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #444;
+      max-width: 650px;
+      font-weight: 600;
+      line-height: 1.6;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .phone-number {
+      font-size: 28px;
+      color: #FF69B4;
+      font-weight: 900;
+      margin: 25px 0;
+      padding: 15px 35px;
+      background: rgba(255, 182, 217, 0.2);
+      border-radius: 50px;
+      border: 3px solid;
+      border-image: linear-gradient(90deg, #7FFFD4, #FFB6D9) 1;
+      display: inline-block;
+    }
+    
     .btn-home {
       display: inline-block;
-      padding: 12px 30px;
-      background-color: #3498db;
+      padding: 18px 50px;
+      background: linear-gradient(135deg, #FFB6D9, #FF69B4);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: background-color 0.3s;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 900;
+      transition: all 0.3s;
+      margin-top: 20px;
+      box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Poppins', sans-serif;
     }
+    
     .btn-home:hover {
-      background-color: #2980b9;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 105, 180, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-container h1 {
+        font-size: 48px;
+      }
+      
+      .phone-number {
+        font-size: 22px;
+        padding: 12px 25px;
+      }
+      
+      .checkmark {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .checkmark::after {
+        font-size: 48px;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1>Claudia's Cleaning</h1>
+    <img src="logo.png" alt="Claudia's Cleaning" style="height: 120px; width: auto;">
     <nav>
-      <a href="/#services">Services</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#contact">Contact</a>
+      <a href="/#services">services</a>
+      <a href="/#pricing">pricing</a>
+      <a href="/#contact">contact</a>
     </nav>
   </header>
 
   <!-- Thank You Message -->
   <div class="thank-you-container">
     <div class="checkmark"></div>
-    <h1>Thank You!</h1>
+    <h1>¡Gracias!</h1>
     <p>
-      Your booking request has been received. Claudia will call you back within 24 hours to confirm your appointment and discuss pricing.
+      Your booking request has been received! Claudia will call you back within 24 hours to confirm your appointment and discuss pricing.
     </p>
-    <p>
-      If you need immediate assistance, please call: <strong>(562) 547 - 3522</strong>
+    <div class="phone-number">
+      📞 (562) 547-3522
+    </div>
+    <p style="font-size: 17px; margin-top: 15px; color: #666;">
+      Need immediate help? Call or text anytime!
     </p>
-    <a href="/" class="btn-home">Return to Home</a>
+    <a href="/" class="btn-home">Back to Home</a>
   </div>
 
   <script src="script.js"></script>
