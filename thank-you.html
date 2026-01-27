@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Claudia's Cleaning</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .thank-you-container {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .thank-you-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .thank-you-container p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #555;
+      max-width: 600px;
+    }
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #4CAF50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      animation: scaleIn 0.5s ease-in-out;
+    }
+    .checkmark::after {
+      content: "✓";
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+    }
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .btn-home {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .btn-home:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Claudia's Cleaning</h1>
+    <nav>
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Thank You Message -->
+  <div class="thank-you-container">
+    <div class="checkmark"></div>
+    <h1>Thank You!</h1>
+    <p>
+      Your booking request has been received. Claudia will call you back within 24 hours to confirm your appointment and discuss pricing.
+    </p>
+    <p>
+      If you need immediate assistance, please call: <strong>(562) 547 - 3522</strong>
+    </p>
+    <a href="/" class="btn-home">Return to Home</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
