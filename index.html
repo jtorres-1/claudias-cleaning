@@ -3,114 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claudia’s Cleaning</title>
+  <title>Claudia's Cleaning</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <!-- Header -->
   <header>
-    <h1>Claudia’s Cleaning</h1>
+    <h1>Claudia's Cleaning</h1>
     <nav>
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <!-- Hero -->
   <section id="hero">
     <h2>Professional House Cleaning You Can Trust</h2>
     <p>$25 off your first cleaning or $30 discount</p>
     <button id="bookNowBtn">Book Now</button>
   </section>
-
   <!-- Services -->
   <section id="services">
     <h2>Our Services</h2>
-
     <div>
       <h3>Home Cleaning</h3>
       <p>Regular and deep cleaning for homes</p>
     </div>
-
     <div>
       <h3>Move In / Move Out</h3>
       <p>Full clean for empty homes or apartments</p>
     </div>
-
     <div>
       <h3>Office Cleaning</h3>
       <p>Clean and professional workspaces</p>
     </div>
   </section>
-
   <!-- Pricing -->
   <section id="pricing">
     <h2>Pricing Packages</h2>
     <p>Call or book online for exact pricing</p>
   </section>
-
   <!-- Contact / Booking -->
   <section id="contact">
     <h2>Book a Cleaning</h2>
-
     <form
+      name="booking"
       method="POST"
       data-netlify="true"
-      name="booking"
+      action="/thank-you.html"
     >
       <input type="hidden" name="form-name" value="booking" />
-
       <input
         type="text"
         name="name"
         placeholder="Name"
         required
       />
-
       <input
         type="tel"
         name="phone"
         placeholder="Phone Number"
         required
       />
-
       <input
         type="email"
         name="email"
         placeholder="Email (optional)"
       />
-
       <input
         type="text"
         name="address"
         placeholder="Address"
         required
       />
-
       <select name="serviceType" required>
         <option value="">Type of Cleaning</option>
         <option value="home">Home Cleaning</option>
         <option value="move">Move In / Move Out</option>
         <option value="office">Office Cleaning</option>
       </select>
-
       <input
         type="date"
         name="preferredDate"
         required
       />
-
       <textarea
         name="notes"
         placeholder="Notes"
       ></textarea>
-
       <button type="submit">Submit Booking Request</button>
     </form>
   </section>
-
   <script src="script.js"></script>
 </body>
 </html>
