@@ -361,6 +361,12 @@ form button:hover {
   form {
     padding: 35px 28px;
   }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -375,4 +381,75 @@ form button:hover {
   section h2 {
     font-size: 32px;
   }
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ecf0f1;
+  padding: 50px 30px 20px;
+  margin-top: 60px;
+  border-top: 5px solid;
+  border-image: linear-gradient(90deg, #7FFFD4, #FFB6D9) 1;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 35px;
+}
+
+.footer-section h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-family: 'Pacifico', cursive;
+  background: linear-gradient(135deg, #7FFFD4, #FFB6D9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 400;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #7FFFD4;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-section p {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #bdc3c7;
+  font-weight: 500;
+}
+
+.footer-section a {
+  color: #FFB6D9;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 600;
+}
+
+.footer-section a:hover {
+  color: #7FFFD4;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 2px solid rgba(127, 255, 212, 0.2);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #95a5a6;
+  font-size: 14px;
+  font-weight: 500;
 }
