@@ -5,14 +5,14 @@
   box-sizing: border-box;
 }
 
-/* Import Fonts - Thicker weights like SunnyHome */
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700;800;900&display=swap');
 
 /* Base */
 body {
   line-height: 1.6;
   color: #333;
-  background: #fafafa;
+  background: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -23,16 +23,14 @@ header {
   align-items: center;
   padding: 20px 60px;
   background: #fff;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 3px solid;
-  border-image: linear-gradient(90deg, #7FFFD4, #FFB6D9) 1;
 }
 
 .logo {
-  height: 80px;
+  height: 100px;
   width: auto;
   transition: transform 0.3s;
 }
@@ -43,94 +41,192 @@ header {
 
 nav {
   display: flex;
-  gap: 35px;
+  gap: 40px;
+  align-items: center;
 }
 
 nav a {
   text-decoration: none;
   color: #555;
   font-weight: 700;
-  font-size: 16px;
-  transition: all 0.3s;
+  font-size: 17px;
+  transition: color 0.3s;
   text-transform: lowercase;
-  position: relative;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #7FFFD4, #FFB6D9);
-  transition: width 0.3s;
 }
 
 nav a:hover {
   color: #40E0D0;
 }
 
-nav a:hover::after {
-  width: 100%;
+.header-buttons {
+  display: flex;
+  gap: 15px;
 }
 
-/* Hero with Background Image */
+.btn-book {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #7FFFD4, #40E0D0);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(64, 224, 208, 0.3);
+}
+
+.btn-book:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(64, 224, 208, 0.4);
+}
+
+.btn-call {
+  padding: 12px 30px;
+  background: #fff;
+  color: #40E0D0;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 16px;
+  border: 2px solid #40E0D0;
+  transition: all 0.3s;
+}
+
+.btn-call:hover {
+  background: #40E0D0;
+  color: #fff;
+}
+
+/* Hero - Left Aligned Like SunnyHome */
 #hero {
-  height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+  min-height: 550px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
                     url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+  padding: 0 80px;
 }
 
-.hero-overlay {
-  z-index: 2;
+.hero-content {
+  max-width: 650px;
 }
 
 #hero h1 {
-  font-size: 58px;
-  margin-bottom: 20px;
-  font-family: 'Pacifico', cursive;
+  font-size: 62px;
+  margin-bottom: 25px;
   color: #fff;
-  font-weight: 400;
-  line-height: 1.3;
+  font-weight: 900;
+  line-height: 1.2;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-.hero-discount {
-  font-size: 24px;
-  margin-bottom: 35px;
+.hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 40px;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.6;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-#hero button {
-  padding: 18px 55px;
-  font-size: 18px;
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  padding: 18px 45px;
   background: linear-gradient(135deg, #7FFFD4, #40E0D0);
   color: #fff;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
   font-weight: 900;
-  font-family: 'Poppins', sans-serif;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-#hero button:hover {
+.btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary {
+  padding: 18px 45px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #40E0D0;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  background: #fff;
+}
+
+/* Special Deals Section */
+#deals {
+  padding: 70px 40px;
+  background: linear-gradient(135deg, #7FFFD4 0%, #40E0D0 100%);
+  text-align: center;
+}
+
+#deals h2 {
+  font-size: 44px;
+  margin-bottom: 50px;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  font-weight: 400;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.deal-card {
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.deal-card:hover {
+  transform: translateY(-5px);
+}
+
+.deal-amount {
+  font-size: 52px;
+  font-weight: 900;
+  color: #FF69B4;
+  margin-bottom: 15px;
+}
+
+.deal-card h3 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.deal-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 /* Sections */
@@ -159,7 +255,7 @@ section h2::after {
   border-radius: 2px;
 }
 
-/* About / Our Journey */
+/* About - White Background */
 #about {
   background: #fff;
 }
@@ -190,43 +286,40 @@ section h2::after {
 
 .about-image img {
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(127, 255, 212, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Services Grid */
+/* Services - Light Gradient Background */
 #services {
-  background: linear-gradient(135deg, rgba(255, 182, 217, 0.08) 0%, rgba(127, 255, 212, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(255, 182, 217, 0.06) 0%, rgba(127, 255, 212, 0.06) 100%);
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
 .service-card {
   background: #fff;
   padding: 0;
-  border-radius: 16px;
+  border-radius: 8px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s;
-  border: 3px solid transparent;
   overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(127, 255, 212, 0.25);
-  border-color: #7FFFD4;
 }
 
 .service-image {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 16px 16px 0 0;
 }
 
 .service-card h3 {
@@ -245,7 +338,7 @@ section h2::after {
   padding: 0 30px 30px;
 }
 
-/* Areas Served */
+/* Areas - White Background */
 #areas {
   background: #fff;
 }
@@ -284,24 +377,23 @@ section h2::after {
   left: 0;
 }
 
-/* Reviews / Testimonials */
+/* Reviews - Light Gradient Background */
 #reviews {
-  background: linear-gradient(135deg, rgba(255, 182, 217, 0.08) 0%, rgba(127, 255, 212, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(255, 182, 217, 0.06) 0%, rgba(127, 255, 212, 0.06) 100%);
 }
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
 .review-card {
   background: #fff;
   padding: 35px 30px;
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid;
-  border-image: linear-gradient(180deg, #7FFFD4, #FFB6D9) 1;
+  border-left: 5px solid #7FFFD4;
 }
 
 .stars {
@@ -325,47 +417,9 @@ section h2::after {
   font-weight: 700;
 }
 
-/* Pricing */
-#pricing {
-  background: #fff;
-  text-align: center;
-}
-
-#pricing p {
-  font-size: 18px;
-  color: #555;
-  font-weight: 600;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pricing-cta {
-  margin-top: 30px;
-}
-
-.cta-phone {
-  display: inline-block;
-  padding: 18px 45px;
-  background: linear-gradient(135deg, #FFB6D9, #FF69B4);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 50px;
-  font-size: 22px;
-  font-weight: 900;
-  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
-  transition: all 0.3s;
-}
-
-.cta-phone:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
-}
-
-/* Contact Form */
+/* Contact - White Background */
 #contact {
-  background: linear-gradient(135deg, rgba(255, 182, 217, 0.08) 0%, rgba(127, 255, 212, 0.08) 100%);
+  background: #fff;
 }
 
 form {
@@ -375,9 +429,9 @@ form {
   max-width: 600px;
   margin: 0 auto;
   padding: 45px 40px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 input,
@@ -385,12 +439,12 @@ select,
 textarea {
   padding: 15px 20px;
   border: 2px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   transition: all 0.3s;
-  background: #fafafa;
+  background: #fff;
 }
 
 input:focus,
@@ -398,7 +452,6 @@ select:focus,
 textarea:focus {
   outline: none;
   border-color: #7FFFD4;
-  background: #fff;
   box-shadow: 0 0 0 3px rgba(127, 255, 212, 0.15);
 }
 
@@ -412,7 +465,7 @@ form button {
   background: linear-gradient(135deg, #FFB6D9, #FF69B4);
   color: #fff;
   border: none;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
   font-weight: 900;
@@ -516,6 +569,10 @@ footer {
   .about-text h2::after {
     margin: 15px auto 0;
   }
+
+  .header-buttons {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -526,7 +583,7 @@ footer {
   }
 
   .logo {
-    height: 70px;
+    height: 80px;
   }
 
   nav {
@@ -534,19 +591,31 @@ footer {
   }
 
   nav a {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   #hero {
-    height: 400px;
+    padding: 0 40px;
+    min-height: 450px;
   }
 
   #hero h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
-  .hero-discount {
-    font-size: 20px;
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    text-align: center;
+    width: 100%;
   }
 
   section {
@@ -562,6 +631,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .deals-grid {
+    grid-template-columns: 1fr;
+  }
+
   form {
     padding: 35px 25px;
   }
@@ -569,11 +642,11 @@ footer {
 
 @media (max-width: 480px) {
   .logo {
-    height: 60px;
+    height: 70px;
   }
 
   #hero h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   section h2 {
