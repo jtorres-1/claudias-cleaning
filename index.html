@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claudia's Cleaning</title>
+  <title>Claudia's Cleaning - Professional House Cleaning in Los Angeles</title>
+  <meta name="description" content="Trusted house cleaning services in Los Angeles County. Home cleaning, move in/out, and office cleaning. Book today!" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="styles.css" />
@@ -11,40 +12,122 @@
 <body>
   <!-- Header -->
   <header>
-    <img src="logo.png" alt="Claudia's Cleaning" style="height: 80px; width: auto;">
+    <img src="logo.png" alt="Claudia's Cleaning" class="logo">
     <nav>
+      <a href="#about">about</a>
       <a href="#services">services</a>
-      <a href="#pricing">pricing</a>
-      <a href="#contact">contact</a>
+      <a href="#areas">areas</a>
+      <a href="#contact">book now</a>
     </nav>
   </header>
-  <!-- Hero -->
+
+  <!-- Hero with Background Image -->
   <section id="hero">
-    <h2>Professional House Cleaning You Can Trust</h2>
-    <p>$25 off your first cleaning or $30 discount</p>
-    <button id="bookNowBtn">Book Now</button>
+    <div class="hero-overlay">
+      <h1>Professional House Cleaning You Can Trust</h1>
+      <p class="hero-discount">$25 off your first cleaning</p>
+      <button id="bookNowBtn">Book Now</button>
+    </div>
   </section>
+
+  <!-- About / Our Journey -->
+  <section id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Our Journey</h2>
+        <p>Claudia's Cleaning was founded with a passion for transforming homes into spotless sanctuaries. Our mission is to provide unparalleled cleaning services that bring joy and tranquility to our clients' lives.</p>
+        <p>We believe in reliability, quality, and putting our clients first. By tailoring each service to individual needs, we create spaces where happiness and memories thrive. Every home deserves to sparkle, and we're here to make that happen.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80" alt="Clean modern kitchen" />
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section id="services">
     <h2>Our Services</h2>
-    <div>
-      <h3>Home Cleaning</h3>
-      <p>Regular and deep cleaning for homes</p>
-    </div>
-    <div>
-      <h3>Move In / Move Out</h3>
-      <p>Full clean for empty homes or apartments</p>
-    </div>
-    <div>
-      <h3>Office Cleaning</h3>
-      <p>Clean and professional workspaces</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Home Cleaning</h3>
+        <p>Regular and deep cleaning for homes. We handle everything from kitchens to bathrooms, leaving your space spotless.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Move In / Move Out</h3>
+        <p>Full clean for empty homes or apartments. Perfect for transitions, ensuring a fresh start in your new space.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Office Cleaning</h3>
+        <p>Clean and professional workspaces. Keep your business environment pristine and welcoming for clients and employees.</p>
+      </div>
     </div>
   </section>
+
+  <!-- Areas Served with Map -->
+  <section id="areas">
+    <h2>Areas We Serve</h2>
+    <div class="areas-content">
+      <div class="areas-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.8827462003!2d-118.69192533992531!3d33.94201374744454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2cae84c82a345%3A0xe4e363d3e4e5e61f!2sLos%20Angeles%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1647891234567!5m2!1sen!2sus" 
+          width="100%" 
+          height="400" 
+          style="border:0; border-radius: 12px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="areas-list">
+        <h3>We're here to help</h3>
+        <ul>
+          <li>Long Beach, CA</li>
+          <li>Lakewood, CA</li>
+          <li>Cerritos, CA</li>
+          <li>Seal Beach, CA</li>
+          <li>La Mirada, CA</li>
+          <li>Bellflower, CA</li>
+          <li>Norwalk, CA</li>
+          <li>Downey, CA</li>
+          <li>& surrounding areas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials / Reviews -->
+  <section id="reviews">
+    <h2>What Our Clients Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Claudia and her team are amazing! My house has never looked better. They pay attention to every detail and are always professional."</p>
+        <p class="review-author">— Maria G., Long Beach</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"I've been using Claudia's Cleaning for over a year now. Reliable, thorough, and trustworthy. Highly recommend!"</p>
+        <p class="review-author">— Jennifer L., Lakewood</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"The best cleaning service in LA! They made my move-out so much easier. The apartment looked brand new when they were done."</p>
+        <p class="review-author">— Carlos R., Cerritos</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section id="pricing">
     <h2>Pricing Packages</h2>
-    <p>Call or book online for exact pricing</p>
+    <p>Every home is unique. Call or book online for a personalized quote tailored to your needs.</p>
+    <div class="pricing-cta">
+      <a href="tel:5625473522" class="cta-phone">📞 (562) 547-3522</a>
+    </div>
   </section>
+
   <!-- Contact / Booking -->
   <section id="contact">
     <h2>Book a Cleaning</h2>
@@ -96,6 +179,7 @@
       <button type="submit">Submit Booking Request</button>
     </form>
   </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-content">
