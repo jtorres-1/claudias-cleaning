@@ -12,7 +12,7 @@
 body {
   line-height: 1.6;
   color: #333;
-  background: #fff;
+  background: linear-gradient(180deg, #fef5f8 0%, #f0f9ff 50%, #fef5f8 100%);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -21,7 +21,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 15px 60px;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -30,7 +30,7 @@ header {
 }
 
 .logo {
-  height: 100px;
+  height: 130px;
   width: auto;
   transition: transform 0.3s;
 }
@@ -39,9 +39,21 @@ header {
   transform: scale(1.05);
 }
 
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
 nav {
   display: flex;
-  gap: 40px;
+  gap: 45px;
   align-items: center;
 }
 
@@ -49,7 +61,7 @@ nav a {
   text-decoration: none;
   color: #555;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 19px;
   transition: color 0.3s;
   text-transform: lowercase;
 }
@@ -58,19 +70,14 @@ nav a:hover {
   color: #40E0D0;
 }
 
-.header-buttons {
-  display: flex;
-  gap: 15px;
-}
-
 .btn-book {
-  padding: 12px 30px;
+  padding: 14px 35px;
   background: linear-gradient(135deg, #7FFFD4, #40E0D0);
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 17px;
   transition: all 0.3s;
   box-shadow: 0 4px 12px rgba(64, 224, 208, 0.3);
 }
@@ -81,13 +88,13 @@ nav a:hover {
 }
 
 .btn-call {
-  padding: 12px 30px;
+  padding: 14px 35px;
   background: #fff;
   color: #40E0D0;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 900;
-  font-size: 16px;
+  font-size: 17px;
   border: 2px solid #40E0D0;
   transition: all 0.3s;
 }
@@ -174,71 +181,73 @@ nav a:hover {
 
 /* Special Deals Section */
 #deals {
-  padding: 70px 40px;
-  background: linear-gradient(135deg, #7FFFD4 0%, #40E0D0 100%);
+  padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(255, 182, 217, 0.08) 0%, rgba(127, 255, 212, 0.08) 100%);
   text-align: center;
 }
 
 #deals h2 {
-  font-size: 44px;
-  margin-bottom: 50px;
+  font-size: 48px;
+  margin-bottom: 45px;
   font-family: 'Pacifico', cursive;
-  color: #fff;
+  color: #FF69B4;
   font-weight: 400;
 }
 
 .deals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
+  gap: 35px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .deal-card {
   background: #fff;
-  padding: 40px 35px;
+  padding: 45px 40px;
   border-radius: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s;
+  border: 3px solid transparent;
 }
 
 .deal-card:hover {
   transform: translateY(-5px);
+  border-color: #7FFFD4;
 }
 
 .deal-amount {
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 900;
   color: #FF69B4;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .deal-card h3 {
-  font-size: 24px;
+  font-size: 26px;
   color: #333;
   font-weight: 900;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .deal-card p {
-  font-size: 16px;
+  font-size: 17px;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.7;
   font-weight: 500;
 }
 
 /* Sections */
 section {
-  padding: 70px 40px;
+  padding: 55px 40px;
   max-width: 1200px;
   margin: auto;
 }
 
 section h2 {
-  font-size: 44px;
-  margin-bottom: 50px;
+  font-size: 50px;
+  margin-bottom: 40px;
   font-family: 'Pacifico', cursive;
   color: #FF69B4;
   font-weight: 400;
@@ -248,10 +257,10 @@ section h2 {
 section h2::after {
   content: '';
   display: block;
-  width: 100px;
-  height: 4px;
+  width: 120px;
+  height: 5px;
   background: linear-gradient(90deg, #7FFFD4, #FFB6D9);
-  margin: 15px auto 0;
+  margin: 18px auto 0;
   border-radius: 2px;
 }
 
@@ -277,7 +286,7 @@ section h2::after {
 }
 
 .about-text p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.8;
   color: #555;
   margin-bottom: 20px;
@@ -323,7 +332,7 @@ section h2::after {
 }
 
 .service-card h3 {
-  font-size: 24px;
+  font-size: 26px;
   color: #40E0D0;
   font-weight: 900;
   margin: 25px 0 15px;
@@ -331,9 +340,9 @@ section h2::after {
 }
 
 .service-card p {
-  font-size: 16px;
+  font-size: 17px;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.7;
   font-weight: 500;
   padding: 0 30px 30px;
 }
@@ -362,13 +371,13 @@ section h2::after {
 }
 
 .areas-list li {
-  font-size: 18px;
+  font-size: 19px;
   color: #555;
-  padding: 12px 0;
+  padding: 13px 0;
   border-bottom: 1px solid #e5e5e5;
   font-weight: 600;
   position: relative;
-  padding-left: 25px;
+  padding-left: 28px;
 }
 
 .areas-list li::before {
@@ -403,7 +412,7 @@ section h2::after {
 }
 
 .review-text {
-  font-size: 16px;
+  font-size: 17px;
   color: #555;
   line-height: 1.7;
   margin-bottom: 20px;
@@ -412,7 +421,7 @@ section h2::after {
 }
 
 .review-author {
-  font-size: 15px;
+  font-size: 16px;
   color: #40E0D0;
   font-weight: 700;
 }
