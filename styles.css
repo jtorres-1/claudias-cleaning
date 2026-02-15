@@ -508,10 +508,8 @@ form button:hover {
   background: linear-gradient(135deg, #50C9E6 0%, #40E0D0 100%);
   text-align: center;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: none;
+  width: 100%;
 }
 
 #final-cta h2 {
