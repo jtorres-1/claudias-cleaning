@@ -9,15 +9,13 @@
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Review Form Section ── */
+    /* ── Leave a Review Section ── */
     #leave-review {
       padding: 60px 20px;
       background: #f9f9f9;
       text-align: center;
     }
-    #leave-review h2 {
-      margin-bottom: 8px;
-    }
+    #leave-review h2 { margin-bottom: 8px; }
     #leave-review .section-sub {
       color: #666;
       margin-bottom: 32px;
@@ -32,8 +30,6 @@
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       text-align: left;
     }
-
-    /* Star Rating */
     .star-rating-label {
       display: block;
       font-weight: 600;
@@ -47,9 +43,7 @@
       gap: 4px;
       margin-bottom: 20px;
     }
-    .star-picker input {
-      display: none;
-    }
+    .star-picker input { display: none; }
     .star-picker label {
       font-size: 2rem;
       color: #ddd;
@@ -58,11 +52,7 @@
     }
     .star-picker label:hover,
     .star-picker label:hover ~ label,
-    .star-picker input:checked ~ label {
-      color: #f5c518;
-    }
-
-    /* Form fields */
+    .star-picker input:checked ~ label { color: #f5c518; }
     .review-form-wrapper input[type="text"],
     .review-form-wrapper textarea {
       width: 100%;
@@ -80,10 +70,7 @@
       outline: none;
       border-color: #4a90e2;
     }
-    .review-form-wrapper textarea {
-      height: 120px;
-      resize: vertical;
-    }
+    .review-form-wrapper textarea { height: 120px; resize: vertical; }
     .review-form-wrapper button[type="submit"] {
       width: 100%;
       padding: 14px;
@@ -96,8 +83,15 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .review-form-wrapper button[type="submit"]:hover {
-      background: #27ae60;
+    .review-form-wrapper button[type="submit"]:hover { background: #27ae60; }
+
+    /* Dynamic review cards loading state */
+    .reviews-loading {
+      text-align: center;
+      color: #999;
+      font-style: italic;
+      padding: 20px;
+      grid-column: 1 / -1;
     }
   </style>
 </head>
@@ -118,7 +112,7 @@
     </div>
   </header>
 
-  <!-- Hero with Background Image -->
+  <!-- Hero -->
   <section id="hero">
     <div class="hero-content">
       <h1>Professional House Cleaning You Can Trust</h1>
@@ -147,7 +141,7 @@
     </div>
   </section>
 
-  <!-- About / Our Journey -->
+  <!-- About -->
   <section id="about">
     <div class="about-content">
       <div class="about-text">
@@ -189,18 +183,16 @@
     </div>
   </section>
 
-  <!-- Areas Served with Map -->
+  <!-- Areas Served -->
   <section id="areas">
     <h2>Areas We Serve</h2>
     <div class="areas-content">
       <div class="areas-map">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.8827462003!2d-118.69192533992531!3d33.94201374744454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2cae84c82a345%3A0xe4e363d3e4e5e61f!2sLos%20Angeles%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1647891234567!5m2!1sen!2sus" 
-          width="100%" 
-          height="400" 
-          style="border:0; border-radius: 8px;" 
-          allowfullscreen="" 
-          loading="lazy">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.8827462003!2d-118.69192533992531!3d33.94201374744454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2cae84c82a345%3A0xe4e363d3e4e5e61f!2sLos%20Angeles%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1647891234567!5m2!1sen!2sus"
+          width="100%" height="400"
+          style="border:0; border-radius: 8px;"
+          allowfullscreen="" loading="lazy">
         </iframe>
       </div>
       <div class="areas-list">
@@ -224,10 +216,11 @@
     </div>
   </section>
 
-  <!-- Testimonials / Reviews -->
+  <!-- Testimonials — hardcoded + dynamic reviews load here -->
   <section id="reviews">
     <h2>What Our Clients Say</h2>
-    <div class="reviews-grid">
+    <div class="reviews-grid" id="reviews-grid">
+      <!-- Hardcoded originals -->
       <div class="review-card">
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="review-text">"I needed a cleaner on short notice, and Claudia and her colleague came by and made our home beautiful. More than I could have asked for! The best decision right before the holidays and with family coming over. Bless you, Claudia. I know exactly where to find you next time."</p>
@@ -243,6 +236,7 @@
         <p class="review-text">"The best cleaning service in LA! They made my move-out so much easier. The apartment looked brand new when they were done. I had a fantastic experience with Claudia's Cleaning—they did an outstanding job cleaning my bathroom, bedroom, and living room. Every room was spotless, and I could tell they paid close attention to the details. Additionally, they were incredibly kind and professional throughout the entire process. It's rare to find someone who is both meticulous and genuinely pleasant to work with. Highly recommend their services—quality work with a reasonable price!"</p>
         <p class="review-author">— Carlos R., Cerritos</p>
       </div>
+      <!-- Dynamic reviews from JSONBin will be appended here -->
     </div>
   </section>
 
@@ -251,14 +245,7 @@
     <h2>Leave Us a Review</h2>
     <p class="section-sub">Had a great experience? We'd love to hear from you!</p>
     <div class="review-form-wrapper">
-      <form
-        name="reviews"
-        method="POST"
-        data-netlify="true"
-        action="/thank-you.html"
-      >
-        <input type="hidden" name="form-name" value="reviews" />
-
+      <form id="review-form">
         <span class="star-rating-label">Your Rating</span>
         <div class="star-picker">
           <input type="radio" name="rating" id="star5" value="5" required />
@@ -272,77 +259,37 @@
           <input type="radio" name="rating" id="star1" value="1" />
           <label for="star1">★</label>
         </div>
-
-        <input
-          type="text"
-          name="reviewer-name"
-          placeholder="Your Name"
-          required
-        />
-        <input
-          type="text"
-          name="location"
-          placeholder="Your City (e.g. Long Beach, CA)"
-        />
-        <textarea
-          name="review"
-          placeholder="Tell us about your experience..."
-          required
-        ></textarea>
-
+        <input type="text" id="reviewer-name" placeholder="Your Name" required />
+        <input type="text" id="reviewer-location" placeholder="Your City (e.g. Long Beach, CA)" />
+        <textarea id="reviewer-text" placeholder="Tell us about your experience..." required></textarea>
         <button type="submit">Submit Review</button>
       </form>
+
+      <div id="review-success" style="display:none; text-align:center; padding: 32px 16px;">
+        <div style="font-size: 3rem; margin-bottom: 12px;">🌟</div>
+        <h3 style="margin-bottom: 8px; color: #2ecc71;">Thank you for your review!</h3>
+        <p style="color: #666;">Your review has been posted and is now visible on the site.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact / Booking -->
   <section id="contact">
     <h2>Book a Cleaning</h2>
-    <form
-      name="booking"
-      method="POST"
-      data-netlify="true"
-      action="/thank-you.html"
-    >
+    <form name="booking" method="POST" data-netlify="true" action="/thank-you.html">
       <input type="hidden" name="form-name" value="booking" />
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        required
-      />
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone Number"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email (optional)"
-      />
-      <input
-        type="text"
-        name="address"
-        placeholder="Address"
-        required
-      />
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" placeholder="Email (optional)" />
+      <input type="text" name="address" placeholder="Address" required />
       <select name="serviceType" required>
         <option value="">Type of Cleaning</option>
         <option value="home">Home Cleaning</option>
         <option value="move">Move In / Move Out</option>
         <option value="office">Office Cleaning</option>
       </select>
-      <input
-        type="date"
-        name="preferredDate"
-        required
-      />
-      <textarea
-        name="notes"
-        placeholder="Notes"
-      ></textarea>
+      <input type="date" name="preferredDate" required />
+      <textarea name="notes" placeholder="Notes"></textarea>
       <button type="submit">Submit Booking Request</button>
     </form>
   </section>
@@ -386,5 +333,89 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    const BIN_ID = '69d9e08a856a6821891fe82a';
+    const API_KEY = '$2a$10$E9.qvajBbF/bu.3dhf93t.BZLJc2vdC8qtc86TZTye2qoy0ayp8Ka';
+    const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+
+    // ── Render a single review card into the grid ──
+    function renderReviewCard(review) {
+      const stars = '⭐'.repeat(parseInt(review.rating) || 5);
+      const author = review.location
+        ? `— ${review.name}, ${review.location}`
+        : `— ${review.name}`;
+      const card = document.createElement('div');
+      card.className = 'review-card';
+      card.innerHTML = `
+        <div class="stars">${stars}</div>
+        <p class="review-text">"${review.text}"</p>
+        <p class="review-author">${author}</p>
+      `;
+      document.getElementById('reviews-grid').appendChild(card);
+    }
+
+    // ── Load existing reviews from JSONBin on page load ──
+    async function loadReviews() {
+      try {
+        const res = await fetch(BIN_URL + '/latest', {
+          headers: { 'X-Master-Key': API_KEY }
+        });
+        const data = await res.json();
+        const reviews = data.record.reviews || [];
+        reviews.forEach(renderReviewCard);
+      } catch (err) {
+        console.error('Could not load reviews:', err);
+      }
+    }
+
+    // ── Submit a new review ──
+    document.getElementById('review-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('reviewer-name').value.trim();
+      const location = document.getElementById('reviewer-location').value.trim();
+      const text = document.getElementById('reviewer-text').value.trim();
+      const ratingInput = document.querySelector('input[name="rating"]:checked');
+      const rating = ratingInput ? ratingInput.value : '5';
+
+      const newReview = { name, location, text, rating, date: new Date().toISOString() };
+
+      try {
+        // 1. Fetch current reviews
+        const getRes = await fetch(BIN_URL + '/latest', {
+          headers: { 'X-Master-Key': API_KEY }
+        });
+        const getData = await getRes.json();
+        const reviews = getData.record.reviews || [];
+
+        // 2. Append new review
+        reviews.push(newReview);
+
+        // 3. Save back to JSONBin
+        await fetch(BIN_URL, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': API_KEY
+          },
+          body: JSON.stringify({ reviews })
+        });
+
+        // 4. Render it on the page immediately
+        renderReviewCard(newReview);
+
+        // 5. Show thank-you, hide form
+        document.getElementById('review-form').style.display = 'none';
+        document.getElementById('review-success').style.display = 'block';
+
+      } catch (err) {
+        alert('Something went wrong submitting your review. Please try again.');
+        console.error(err);
+      }
+    });
+
+    // Load reviews when page opens
+    loadReviews();
+  </script>
 </body>
 </html>
